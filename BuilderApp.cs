@@ -351,11 +351,11 @@ public class WizardForm : Form
             {
                 string manifest = Path.Combine(work, "admin.manifest");
                 File.WriteAllText(manifest, AdminManifest(appName), Encoding.UTF8);
-                args = "/target:winexe /out:\"" + output + "\" /win32manifest:\"" + manifest + "\" /res:\"" + zip + "\",app.zip /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.IO.Compression.FileSystem.dll \"" + setupCs + "\"";
+                args = "/target:winexe /out:\"" + output + "\" /win32manifest:\"" + manifest + "\" /res:\"" + zip + "\",app.zip /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll \"" + setupCs + "\"";
             }
             else
             {
-                args = "/target:winexe /out:\"" + output + "\" /res:\"" + zip + "\",app.zip /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.IO.Compression.FileSystem.dll \"" + setupCs + "\"";
+                args = "/target:winexe /out:\"" + output + "\" /res:\"" + zip + "\",app.zip /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll \"" + setupCs + "\"";
             }
 
             string outDir = Path.GetDirectoryName(output);
